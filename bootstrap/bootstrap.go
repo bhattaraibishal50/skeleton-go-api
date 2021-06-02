@@ -36,10 +36,10 @@ func bootstrap(
 
 	lifecycle.Append(fx.Hook{
 		OnStart: func(context.Context) error {
-			logger.Zap.Info("Starting Application")
-			logger.Zap.Info("---------------------")
-			logger.Zap.Info("------- CLEAN -------")
-			logger.Zap.Info("---------------------")
+			logger.Zap.Info("---- Starting Application ----")
+			logger.Zap.Info("------------------------------")
+			logger.Zap.Info("-------- Be-health API -------")
+			logger.Zap.Info("------------------------------")
 
 			conn.SetMaxOpenConns(10)
 			go func() {
