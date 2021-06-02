@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/dipeshdulal/clean-gin/lib"
+	"behealth-api/lib"
 	"gorm.io/gorm"
 )
 

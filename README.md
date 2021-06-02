@@ -1,23 +1,12 @@
-## Clean Gin
+## API for behealth project
 
-Trying to implement clean architecture with gin framework.
+APi for be health project
 
-#### Environment Variables
 
-| Key            | Value                    | Desc                             |
-| -------------- | ------------------------ | -------------------------------- |
-| `SERVER_PORT`  | `5000`                   | Port at which app runs           |
-| `ENV`          | `development,production` | App running Environment          |
-| `LOG_OUTPUT`   | `./server.log`           | Output Directory to save logs    |
-| `DB_USER`      | `username`               | Database Username                |
-| `DB_PASS`      | `password`               | Database Password                |
-| `DB_HOST`      | `0.0.0.0`                | Database Host                    |
-| `DB_PORT`      | `3306`                   | Database Port                    |
-| `DB_NAME`      | `test`                   | Database Name                    |
-| `JWT_SECRET`   | `secret`                 | JWT Token Secret key             |
-| `ADMINER_PORT` | `5001`                   | Adminer DB Port                  |
-| `DEBUG_PORT`   | `5002`                   | Port that delve debugger runs in |
-
+### Development
+- Copy `.env.example` to `.env` and update according to requirement.
+- Create `serviceAccountKey.json` file for firebase admin sdk.
+- To run `docker-compose up` (set configuration for adminer on `ADMINER_PORT` and debugger on `DEBUG_PORT`)
 #### Migration Commands
 
 | Command             | Desc                                           |

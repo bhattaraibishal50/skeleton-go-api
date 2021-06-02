@@ -1,4 +1,4 @@
-module github.com/dipeshdulal/clean-gin
+module behealth-api
 
 go 1.14
 

@@ -3,12 +3,12 @@ package bootstrap
 import (
 	"context"
 
-	"github.com/dipeshdulal/clean-gin/api/controllers"
-	"github.com/dipeshdulal/clean-gin/api/middlewares"
-	"github.com/dipeshdulal/clean-gin/api/routes"
-	"github.com/dipeshdulal/clean-gin/lib"
-	"github.com/dipeshdulal/clean-gin/repository"
-	"github.com/dipeshdulal/clean-gin/services"
+	"behealth-api/api/controllers"
+	"behealth-api/api/middlewares"
+	"behealth-api/api/routes"
+	"behealth-api/lib"
+	"behealth-api/repository"
+	"behealth-api/services"
 	"go.uber.org/fx"
 )
 

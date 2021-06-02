@@ -3,8 +3,8 @@ package middlewares
 import (
 	"net/http"
 
-	"github.com/dipeshdulal/clean-gin/constants"
-	"github.com/dipeshdulal/clean-gin/lib"
+	"behealth-api/constants"
+	"behealth-api/lib"
 	"github.com/gin-gonic/gin"
 )
 

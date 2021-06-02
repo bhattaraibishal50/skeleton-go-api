@@ -4,10 +4,10 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/dipeshdulal/clean-gin/constants"
-	"github.com/dipeshdulal/clean-gin/lib"
-	"github.com/dipeshdulal/clean-gin/models"
-	"github.com/dipeshdulal/clean-gin/services"
+	"behealth-api/constants"
+	"behealth-api/lib"
+	"behealth-api/models"
+	"behealth-api/services"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )

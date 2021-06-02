@@ -1,9 +1,9 @@
 package routes
 
 import (
-	"github.com/dipeshdulal/clean-gin/api/controllers"
-	"github.com/dipeshdulal/clean-gin/api/middlewares"
-	"github.com/dipeshdulal/clean-gin/lib"
+	"behealth-api/api/controllers"
+	"behealth-api/api/middlewares"
+	"behealth-api/lib"
 )
 
 // UserRoutes struct

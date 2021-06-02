@@ -1,9 +1,9 @@
 package services
 
 import (
-	"github.com/dipeshdulal/clean-gin/lib"
-	"github.com/dipeshdulal/clean-gin/models"
-	"github.com/dipeshdulal/clean-gin/repository"
+	"behealth-api/lib"
+	"behealth-api/models"
+	"behealth-api/repository"
 	"gorm.io/gorm"
 )
 
