@@ -1,4 +1,4 @@
-package lib
+package infrastructure
 
 import (
 	"github.com/gin-gonic/gin"

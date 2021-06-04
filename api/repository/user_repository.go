@@ -1,18 +1,20 @@
 package repository
 
 import (
-	"behealth-api/lib"
+	"behealth-api/infrastructure"
+
 	"gorm.io/gorm"
 )
 
 // UserRepository database structure
 type UserRepository struct {
-	lib.Database
-	logger lib.Logger
+	infrastructure.Database
+	logger infrastructure.Logger
 }
 
 // NewUserRepository creates a new user repository
-func NewUserRepository(db lib.Database, logger lib.Logger) UserRepository {
+func NewUserRepository(db infrastructure.Database,
+	logger infrastructure.Logger) UserRepository {
 	return UserRepository{
 		Database: db,
 		logger:   logger,

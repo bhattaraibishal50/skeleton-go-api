@@ -13,6 +13,7 @@ services:
     env_file: .env
     security_opt:
       - seccomp:unconfined
+    container_name: behealth-web
     depends_on:
       - database
 
@@ -24,11 +25,12 @@ services:
       MYSQL_ROOT_PASSWORD: "${DB_PASS}"
       MYSQL_DATABASE: "${DB_NAME}"
       MYSQL_ROOT_HOST: "%"
+    container_name: behealth-db
     command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
     ports:
       - 33068:3306
     volumes:
-      - clean_db:/var/lib/mysql
+      - behealth_db:/var/lib/mysql
 
   adminer:
     image: adminer
@@ -36,4 +38,4 @@ services:
       - ${ADMINER_PORT}:8080
 
 volumes:
-  clean_db:
+  behealth_db:

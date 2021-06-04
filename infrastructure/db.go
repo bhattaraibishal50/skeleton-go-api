@@ -1,4 +1,4 @@
-package lib
+package infrastructure
 
 import (
 	"fmt"
@@ -24,8 +24,7 @@ func NewDatabase(env Env, zapLogger Logger) Database {
 	host := env.DBHost
 	port := env.DBPort
 	dbname := env.DBName
-
-	url := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", username, password, host, port, dbname)
+	environment := env.Environment
 
 	newLogger := logger.New(
 		log.New(os.Stdout, "\r\n", log.LstdFlags),
@@ -35,6 +34,16 @@ func NewDatabase(env Env, zapLogger Logger) Database {
 			Colorful:      true,
 		},
 	)
+	url := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", username, password, host, port, dbname)
+	if environment != "development" {
+		url = fmt.Sprintf(
+			"%s:%s@unix(/cloudsql/%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
+			username,
+			password,
+			host,
+			dbname,
+		)
+	}
 
 	db, err := gorm.Open(mysql.Open(url), &gorm.Config{
 		Logger: newLogger,
