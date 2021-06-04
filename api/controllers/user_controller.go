@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"behealth-api/api/responses"
-	"behealth-api/api/services"
 	"behealth-api/infrastructure"
 	"net/http"
 
@@ -11,15 +10,13 @@ import (
 
 // UserController data type
 type UserController struct {
-	service services.UserService
-	logger  infrastructure.Logger
+	logger infrastructure.Logger
 }
 
 // NewUserController creates new user controller
-func NewUserController(userService services.UserService, logger infrastructure.Logger) UserController {
+func NewUserController(logger infrastructure.Logger) UserController {
 	return UserController{
-		service: userService,
-		logger:  logger,
+		logger: logger,
 	}
 }
 

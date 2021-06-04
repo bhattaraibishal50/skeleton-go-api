@@ -17,18 +17,3 @@ APi for be health project
 | `make goto`         | Migrate to particular version                  |
 | `make drop`         | Drop everything inside database                |
 | `make create`       | Create new migration file(up & down)           |
-
-#### Checklist
-
-- [x] Implement Dependency Injection (go-fx)
-- [x] Routing (gin web framework)
-- [x] Environment Files
-- [x] Logging (file saving on `production`) [zap](https://github.com/uber-go/zap)
-- [x] Middlewares (cors)
-- [x] Database Setup (mysql)
-- [x] Models Setup and Automigrate (gorm)
-- [x] Repositories
-- [x] Implementing Basic CRUD Operation
-- [x] Authentication (JWT)
-- [x] Migration
-- [x] Dockerize Application with Debugging Support Enabled. Debugger runs at `5002`. Vs code configuration is at `.vscode/launch.json` which will attach debugger to remote application.

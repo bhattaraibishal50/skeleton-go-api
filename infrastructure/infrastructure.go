@@ -8,4 +8,7 @@ var Module = fx.Options(
 	fx.Provide(NewEnv),
 	fx.Provide(NewLogger),
 	fx.Provide(NewDatabase),
+	fx.Provide(NewMigrations),
+	fx.Provide(NewFBApp),
+	fx.Provide(NewFBAuth),
 )

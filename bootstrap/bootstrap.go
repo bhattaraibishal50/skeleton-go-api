@@ -9,6 +9,7 @@ import (
 	"behealth-api/api/routes"
 	"behealth-api/api/services"
 	"behealth-api/infrastructure"
+	"behealth-api/seeds"
 
 	"go.uber.org/fx"
 )
@@ -21,6 +22,7 @@ var Module = fx.Options(
 	infrastructure.Module,
 	services.Module,
 	repository.Module,
+	seeds.Module,
 	fx.Invoke(bootstrap),
 )
 
@@ -31,8 +33,8 @@ func bootstrap(
 	env infrastructure.Env,
 	logger infrastructure.Logger,
 	database infrastructure.Database,
-	middlewares middlewares.Middlewares,
 	migrations infrastructure.Migrations,
+	seeds seeds.Seeds,
 
 ) {
 	conn, _ := database.DB.DB()
@@ -49,7 +51,13 @@ func bootstrap(
 
 			conn.SetMaxOpenConns(10)
 			go func() {
+
+				logger.Zap.Info("🖇️  Seting up route ....")
 				routes.Setup()
+
+				logger.Zap.Info(" 🌱 Seeding data ......")
+				seeds.Run()
+
 				if env.ServerPort == "" {
 					handler.Gin.Run()
 				} else {

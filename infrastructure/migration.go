@@ -36,7 +36,7 @@ func (m Migrations) Migrate() {
 
 	url := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", username, password, host, port, dbname)
 
-	if environment != "local" {
+	if environment != "development" {
 		url = fmt.Sprintf(
 			"%s:%s@unix(/cloudsql/%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 			username,
